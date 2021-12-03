@@ -1,4 +1,4 @@
-# Desafio PROVER Back-End
+# Desafio PROVER Front-End
 
 ## Sobre o projeto
 Este projeto é um desafio da empresa PROVER que consiste em uma lista de cadastro de funcionários com CRUD básico, sistema de login e recuperação de senha.
