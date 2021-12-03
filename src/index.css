@@ -109,3 +109,99 @@ html {
   font-size: 1.2rem;
   color: var(--white-1);
 }
+
+.flex-row {
+  display: flex;
+}
+
+nav {
+  height: 5rem;
+  width: 100%;
+  background-image: linear-gradient(45deg, #46BDF1, #3C87CC, #3149A1);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  font-size: 2.5rem;
+  color: var(--white-1)
+}
+
+nav button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--white-1);
+  cursor: pointer;
+  margin-left: 3rem;
+}
+
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: scroll;
+  min-height: calc(100vh - 50px);
+}
+
+.table-title {
+  margin: auto;
+  width: 30rem;
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem auto;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 6rem
+}
+
+.search-bar input {
+  min-width: 30rem;
+}
+
+table {
+  border-spacing: 4rem 1.5rem;
+  font-size: 1.6rem;
+}
+
+.employee-form {
+  min-width: 25rem;
+}
+
+.employee-form input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 15px;
+  border: 1px solid var(--gray-1);
+  padding: 1rem 2rem;
+}
+
+.employee-form select {
+  width: 100%;
+  height: 3rem;
+  border-radius: 15px;
+  padding: 0 2rem;
+  background: var(--white-1)
+}
+
+.password-text {
+  font-size: 1.5rem;
+  max-width: 24rem;
+  color: var(--gray-1);
+  text-align: center;
+}
+
+.password-msg {
+  max-width: 24rem;
+  color: var(--blue-1);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.employee:hover {
+  color: var(--blue-1);
+  transform: scale(1.02);
+  cursor: pointer;
+}

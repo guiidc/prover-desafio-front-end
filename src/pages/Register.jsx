@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from '../utils/axios';
 import validator from 'validator';
@@ -8,6 +8,11 @@ function Register() {
   let acumulativeErrors = [];
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) navigate('/employees')
+  });
+  
   const validateEmail = (email) => {
     if (!validator.isEmail(email)) {
       acumulativeErrors.push('E-mail inválido');
