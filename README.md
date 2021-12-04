@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Desafio PROVER Front-End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre o projeto
+Este projeto é um desafio da empresa PROVER que consiste em uma lista de cadastro de funcionários com CRUD básico, sistema de login e recuperação de senha.
 
-## Available Scripts
+A API foi construida seguindo o padrão Restful com MSC, que serve as informações para um front-end feito em React.
 
-In the project directory, you can run:
+## Tecnologias utilizadas
+### Back-End
+- NodeJs
+- Express
+- BcryptJs
+- Validator 
+- MySQL
+- Sequelize
+- JSON Web Token
+- NoideMailer
+- Jest
+- Supertest
+- DotEnv
+- Helmet
 
-### `npm start`
+### Front-End
+- ReactJS
+- React Router Dom
+- Axios
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Instruções Back-End
+1. Após clonar o repositório rode o comando `npm install` para instalar as dependências necessárias.
+2. Crie uma arquivo .env para setar as variaveis de ambiente a seguir
++ DB_USERNAME= usuário do banco de dados
++ DB_PASSWORD= senha do banco de dados
++ DB_HOST= endereço do banco de dados
+* JWT_SECRET= string secreta para gerar os tokens JEWT
+* EMAIL_USER=usuário do e-mail que irá enviar o link de recuperação
+* EMAIL_PASSWORD com a senha do email que irá enviar o link de recuperação
+5. instale o sequelize-cli com o comando `npm install sequelize-cli -D`
+6. Após a instalação do sequelize rode os seguintes comandos para criar as tabelas e o DB necessário 
+```
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+```
 
-### `npm test`
+4. A aplicação roda na porta 3001, certifique-se de que a porta em questão não está sendo utilizada no momento por outra aplicação. Para iniciar o servidor basta digitar o o comando `$ npm run dev` no terminal
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. Para rodar os teste, antes de exuctar o comando `npm test` é preciso criar o banco de testes, fazer as suas migrations também, para isso execute o comando 
+```
+NODE_ENV=test npx sequelize db:create
+NODE_ENV=test npx sequelize db:migrate
+NODE_ENV=test npx sequelize db:seed:all
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Instruções Front-End
+1. Após clonar o repositório execute o comando `npm install` para instalar as dependências necessárias.
+2. Verifique se o servidor Back-End está online e execute o comando `npm start` para iniciar a aplicação
+3. Obs.: A aplicação front roda na porta 3000 e faz a requisção para o back-end que está na porta 3001. Ao executar verifique se alguma dessas portas não estão sendo usadadas por outros serviços.
