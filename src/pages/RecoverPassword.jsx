@@ -15,7 +15,9 @@ function ResetPassword() {
       setMessage(`Um link foi enviado para seu e-mail, você será redirecionado em 5 segundos...`);
       setTimeout(() => navigate('/'), 5000)
     })
-    .catch(() => setMessage('Algo deu errado.. =('));
+    .catch(() => {
+      setMessage('Algo deu errado.. =(')
+    });
   }
 
   return (

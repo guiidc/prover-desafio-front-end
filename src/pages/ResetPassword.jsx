@@ -29,7 +29,7 @@ function Home() {
     axios.post('reset-password', { id, email, token, password })
     .then((response) => {
       localStorage.setItem('token', response.data.token);
-      navigate('/employees')
+      navigate('/employees');
     })
     .catch((err) => setError(err.response.data.message))
   }

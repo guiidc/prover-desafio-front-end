@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from '../utils/axios'
 
 function AddEmployee() {
-  const [positions, setPositions] = useState([])
+  const [positions, setPositions] = useState([]);
+  const [errors, setErrors] = useState('');
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -24,14 +25,9 @@ function AddEmployee() {
       sex: sex.value,
       status: status.value,
       positionId: positionId.value
-    },
-    {
-      headers: {
-        authorization: localStorage.getItem('token'),
-      }
     })
     .then(() => navigate('/employees'))
-    .catch((err) => console.log(err.response))
+    .catch((err) => setErrors(err.response.data.message))
 
   }
 
@@ -76,6 +72,7 @@ function AddEmployee() {
            <option key={ id } value={ id }>{position}</option>
          ))}
        </select>
+       { errors ? <span className="errors">{errors}</span> : null }
         <button type="submit" className="button" required>Cadastrar</button>
       </form>
     </div>
